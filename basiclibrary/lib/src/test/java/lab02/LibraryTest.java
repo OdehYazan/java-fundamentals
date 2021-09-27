@@ -17,17 +17,17 @@ class LibraryTest {
         assertTrue(classUnderTest.someLibraryMethod(), "someLibraryMethod should return 'true'");
     }
 
-//        @Test
-//    public void testroll() {
-//
-//        int numRolls = 4;
-//        assertEquals("array length is " + numRolls, numRolls, fun.roll(numRolls));
-//    }
+        @Test
+    public void testroll() {
+
+        int numRolls = 4;
+        assertEquals(numRolls, fun.roll(numRolls).length, "The size test passed");
+    }
      @Test
     public void testAverage(){
         int [] arr ={1,1,1};
         int av= 1;
-        assertEquals( av, fun.Average(arr));
+        assertEquals( av, fun.average(arr));
     }
 
     @Test
@@ -45,6 +45,6 @@ public void testArraysLowestAav() {
             {55, 54, 60, 53, 59, 57, 61}, // 57.0
             {65, 56, 55, 52, 55, 62, 57} // 57.4285714286
     };
-    assertTrue(Library.arraysLowestAav(testArr)==57, "lowest average is arr at index 2");
+    assertArrayEquals(Library.arraysLowestAav(testArr), testArr[2], "lowest average is arr at index 2");
 }
 }

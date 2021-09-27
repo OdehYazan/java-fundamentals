@@ -4,22 +4,32 @@
 package lab02;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Library {
 
-    public static void roll(int n) {
+    public static int[] roll(int n) {
 
-//    int [] arrayResult = new int [n];
+    int [] arrayResult = new int [n];
 
-        ArrayList<Integer> arrayResult = new ArrayList<>();
+//        ArrayList<Integer> arrayResult = new ArrayList<>();
 
         for (int i = 0; i < n; i++) {
             int diceFace = (int) Math.ceil(Math.random() * 6);
-            arrayResult.add(diceFace);
+//            arrayResult.add(diceFace);
+            arrayResult[i]=diceFace;
         }
 
-        System.out.println(arrayResult);
+        // print array one method
+        System.out.println(Arrays.toString(arrayResult));
 
+        // print array second method
+        for (int i = 0; i < n; i++){
+            System.out.print(arrayResult[i] + ", ");
+        }
+
+        System.out.println("\n");
+        return arrayResult;
     }
 
     public static boolean containsDuplicates(int[] arr) {
@@ -49,7 +59,7 @@ public class Library {
         return false;
     }
 
-    public static double Average(int[] array) {
+    public static double average(int[] array) {
         double sum = 0;
         for (int value : array) {
             sum += value;
@@ -58,7 +68,7 @@ public class Library {
         return sum / array.length;
     }
 
-    public static double arraysLowestAav(int[][] arr) {
+    public static int[] arraysLowestAav(int[][] arr) {
 
 //        ArrayList <Double> avarges = new ArrayList<>();
         double[] avarges = new double[arr.length];
@@ -80,15 +90,17 @@ public class Library {
 
         }
         finalAv=avarges[0];
+        int selsctedArray = 0;
         for (int i = 1; i < avarges.length; i++) {
 
 
                 if (avarges[i] < finalAv) {
                     finalAv = avarges[i];
+                    selsctedArray=i;
                 }
 
         }
-        return finalAv;
+        return arr[selsctedArray];
     }
 
     public boolean someLibraryMethod() {

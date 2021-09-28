@@ -6,6 +6,7 @@ package lab02;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -47,4 +48,47 @@ public void testArraysLowestAav() {
     };
     assertArrayEquals(Library.arraysLowestAav(testArr), testArr[2], "lowest average is arr at index 2");
 }
+//    @Test
+//    public void testWeatherData_OneEmptyWeek() {
+//        int[][] weeklyMonthTemperatures = {
+//                {},
+//                {57, 65, 65, 70, 72, 65, 51},
+//                {55, 54, 60, 53, 59, 57, 61},
+//                {65, 56, 55, 52, 55, 62, 57}
+//        };
+//
+//        assertEquals(
+//                "High: 72\n" +
+//                        "Low: 51\n" +
+//                        "Never saw temperature: 58\n" +
+//                        "Never saw temperature: 63\n" +
+//                        "Never saw temperature: 64\n" +
+//                        "Never saw temperature: 66\n" +
+//                        "Never saw temperature: 67\n" +
+//                        "Never saw temperature: 68\n" +
+//                        "Never saw temperature: 69\n" +
+//                        "Never saw temperature: 71\n",
+//                fun.weatherData(weeklyMonthTemperatures),"OneEmptyWeek : incorrect values"
+//        );
+//    }
+    @Test
+    public void testTally_OneWinner() {
+        List<String> votes = new ArrayList<>();
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Shrub");
+        votes.add("Hedge");
+        votes.add("Shrub");
+        votes.add("Bush");
+        votes.add("Hedge");
+        votes.add("Bush");
+
+        assertEquals(
+
+                "Bush received the most votes!",
+                fun.tally(votes),"OneWinner should return 'Bush'"
+        );
+    }
+
 }
